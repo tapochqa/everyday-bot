@@ -18,13 +18,14 @@
       (lambda/response->)))
 
 (defn -main
-  [tg-token vk-token owner_id]
+  [tg-token vk-token owner_id target_id]
   
   (let [config 
         { :test-server false
           :token tg-token
           :vk-token vk-token
           :owner_id owner_id
+          :target_id target_id
           :polling {:update-timeout 1000}
           }]
   #_(polling/run-polling config)
@@ -39,7 +40,7 @@
                  clojure.java.io/resource
                  clojure.java.io/reader)]
      
-     (-main (slurp "token") (slurp "vk-token") (slurp "owner_id")))
+     (-main (slurp "token") (slurp "vk-token") (slurp "owner_id") (slurp "target_id")))
   
   
   (-main "...:...")

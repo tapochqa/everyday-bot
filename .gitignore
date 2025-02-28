@@ -13,6 +13,7 @@ pom.xml.asc
 token
 vk-token
 owner_id
+target_id
 
 PLATFORM
 TELEGRAM_OFFSET
