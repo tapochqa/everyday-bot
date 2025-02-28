@@ -1,7 +1,7 @@
 lint:
 	clj-kondo --lint src
 
-NAME = pauk-yf
+NAME = everyday-bot
 
 NI_TAG = ghcr.io/graalvm/native-image:22.2.0
 
@@ -62,8 +62,10 @@ deploy-version:
 		--runtime bash \
 		--entrypoint handler.sh \
 		--memory 128m \
-		--execution-timeout 3s \
+		--execution-timeout 10s \
 		--environment TELEGRAM_BOT_TOKEN=$(token) \
+		--environment VK_BOT_TOKEN=$(vk-token) \
+		--environment OWNER_ID=$(owner_id) \
 		--package-bucket-name lmnd \
 		--package-object-name ${NAME}.zip
 
