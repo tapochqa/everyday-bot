@@ -66,6 +66,7 @@ deploy-version:
 		--environment TELEGRAM_BOT_TOKEN=$(token) \
 		--environment VK_BOT_TOKEN=$(vk-token) \
 		--environment OWNER_ID=$(owner_id) \
+		--environment TARGET_ID=$(target_id) \
 		--package-bucket-name lmnd \
 		--package-object-name ${NAME}.zip
 
